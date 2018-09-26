@@ -2,7 +2,7 @@
     <div>
       <div class="recommend-title">热销推荐</div>
       <ul>
-        <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+        <li class="item border-bottom" v-for="item of list" :key="item.id">
           <img class="item-img" :src="item.imgUrl"/>
           <div class="item-info">
             <p class="item-title">{{item.title}}</p>
@@ -16,30 +16,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1603/9d/9d8c0e9a01bba92e90.water.jpg_200x200_86f2e623.jpg',
-        title: '锦绣中华民俗村',
-        desc: '锦绣中华民俗村锦绣中华民俗村'
-      }, {
-        id: '002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1603/9d/9d8c0e9a01bba92e90.water.jpg_200x200_86f2e623.jpg',
-        title: '锦绣中华民俗村',
-        desc: '锦绣中华民俗村锦绣中华民俗村'
-      }, {
-        id: '003',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1603/9d/9d8c0e9a01bba92e90.water.jpg_200x200_86f2e623.jpg',
-        title: '锦绣中华民俗村',
-        desc: '锦绣中华民俗村锦绣中华民俗村'
-      }, {
-        id: '004',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1603/9d/9d8c0e9a01bba92e90.water.jpg_200x200_86f2e623.jpg',
-        title: '锦绣中华民俗村',
-        desc: '锦绣中华民俗村锦绣中华民俗村'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
