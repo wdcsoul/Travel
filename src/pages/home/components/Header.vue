@@ -14,9 +14,9 @@
     </div>
 </template>
 <script>
-  export default {
-    name:'HomeHeader'
-  }
+export default {
+  name: 'HomeHeader'
+}
 </script>
 <style lang="stylus" scoped>
     @import '~styles/varivies.styl' /*在css中使用@引用的时候，前开加~, 也可以在build文件中webpack.base.cong.js中配置自定义路径*/
