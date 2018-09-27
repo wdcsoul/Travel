@@ -7,10 +7,12 @@
           <span class="iconfont">&#xe632;</span>
           输入城市/景点/游玩主题
         </div>
-        <div class="header-right">
-          {{this.city}}
-          <span class="iconfont arrow-icon">&#xe615;</span>
-        </div>
+        <router-link to="/city">
+          <div class="header-right">
+            {{this.city}}
+            <span class="iconfont arrow-icon">&#xe615;</span>
+          </div>
+        </router-link>
     </div>
 </template>
 <script>
@@ -25,7 +27,7 @@ export default {
     @import '~styles/varivies.styl' /*在css中使用@引用的时候，前开加~, 也可以在build文件中webpack.base.cong.js中配置自定义路径*/
     .header
         display: flex;
-        line-height: .86rem;
+        line-height: $headerHeight;
         background: $bgColor;
         color: #fff
       .header-left
@@ -47,6 +49,7 @@ export default {
       .header-right
         width: 1.24rem;
         float: right;
+        color white
         text-align: center
         .arrow-icon
             font-size :.1rem;
