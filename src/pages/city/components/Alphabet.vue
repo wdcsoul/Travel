@@ -1,4 +1,9 @@
-
+<!--
+  性能优化：
+  1，const startY = this.$refs['A'][0].offsetTop 这个是固定值，每次滚动都会执行一次，在data中声明一个值，在生命钩子updated中，获取offsetTop的值
+  原因：因为这个组件的list是从City中传过来的值，此时开始空数组，当值获取到之后，重新渲染了页面， updated会执行
+  2，函数节流：当在滚动的时候，会不断触发事件，使用setTimeout限制在一定时间内事件无法执行
+-->
 <template>
   <ul class="list">
     <li
@@ -16,12 +21,6 @@
   </ul>
 </template>
 <script>
-/* 性能优化：
-* 1，const startY = this.$refs['A'][0].offsetTop 这个是固定值，每次滚动都会执行一次，在data中声明一个值，在生命钩子updated中，获取offsetTop的值
-*   原因：因为这个组件的list是从City中传过来的值，此时开始空数组，当值获取到之后，重新渲染了页面， updated会执行
-*
-* 2，函数节流：当在滚动的时候，会不断触发事件，使用setTimeout限制在一定时间内事件无法执行
-**/
 export default {
   name: 'CityAlphabet',
   props: {
@@ -43,7 +42,7 @@ export default {
       timer: null
     }
   },
-  /*性能优化1*/
+  /* 性能优化1 */
   updated () {
     this.startY = this.$refs['A'][0].offsetTop
   },
