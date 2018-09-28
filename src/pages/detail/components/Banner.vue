@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="banner" @click="handleBannerClick">
-      <img class="banner-img" src="http://img1.qunarzz.com/sight/p0/1507/64/34362835b4a219af8b36803d31a6380f.water.jpg_600x330_4ae7abf5.jpg"/>
+      <img class="banner-img" :src="bannerImg"/>
       <div class="banner-info">
         <div class="banner-title">
-          广东省深圳市盐田区小梅沙海洋世界
+          {{this.sightName}}
         </div>
         <div class="banner-number">
           <span class="iconfont banner-icon">&#xe68b;</span>
@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <common-gallary :imgs="imgs" v-show="showGallary" @closegallary="handleCloseClick"></common-gallary>
+    <common-gallary :imgs="gallaryImgs" v-show="showGallary" @closegallary="handleCloseClick"></common-gallary>
   </div>
 </template>
 <script>
@@ -21,6 +21,11 @@ export default {
   name: 'DetailBanner',
   components: {
     CommonGallary
+  },
+  props: {
+    sightName: String,
+    bannerImg: String,
+    gallaryImgs: Array
   },
   data () {
     return {
