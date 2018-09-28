@@ -50,12 +50,12 @@ export default {
           border-radius: .1rem
           color :#ccc
       .header-right
-        min-width: 1.04rem;
+        min-width: 1rem;
         padding 0 .1rem
         float: right;
         color white
         text-align: center
         .arrow-icon
-            font-size :.1rem;
+            font-size :.3rem;
 
 </style>

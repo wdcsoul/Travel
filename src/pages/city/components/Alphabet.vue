@@ -3,6 +3,7 @@
   1，const startY = this.$refs['A'][0].offsetTop 这个是固定值，每次滚动都会执行一次，在data中声明一个值，在生命钩子updated中，获取offsetTop的值
   原因：因为这个组件的list是从City中传过来的值，此时开始空数组，当值获取到之后，重新渲染了页面， updated会执行
   2，函数节流：当在滚动的时候，会不断触发事件，使用setTimeout限制在一定时间内事件无法执行
+  3,在真机测试的时候，滚动的时候，页面会跟着拖动： @touchstart.prevent 阻止浏览器的默认行为
 -->
 <template>
   <ul class="list">
@@ -11,7 +12,7 @@
       v-for="(item) of letters"
       :key="item"
       @click="hanldLetterClick"
-      @touchstart="handleTouchStart"
+      @touchstart.prevent="handleTouchStart"
       @touchmove="handleTouchMove"
       @touchend="handleTouchEnd"
       :ref="item"

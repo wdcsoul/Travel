@@ -12,15 +12,15 @@ export default new Router({
   routes: [{
     path: '/',
     name: 'Home',
-    component: Home
+    component: () => import('@/pages/home/Home')
   }, {
     path: '/city',
     name: 'City',
-    component: City
+    component: () => import('@/pages/city/City')
   }, {
     path: '/detail/:id', /* 动态路由 */
     name: 'Detail',
-    component: Detail
+    component: () => import('@/pages/detail/Detail')
   }],
   /* 解决滚动问题 */
   scrollBehavior (to, from, savedPosition) {

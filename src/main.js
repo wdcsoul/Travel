@@ -10,6 +10,7 @@ import 'styles/border.css'
 import 'styles/iconfont.css'
 import 'swiper/dist/css/swiper.css'
 import store from './store/index'
+import 'babel-polyfill'
 
 Vue.config.productionTip = false
 fastClcik.attach(document.body)

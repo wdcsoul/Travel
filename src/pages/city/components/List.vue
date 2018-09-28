@@ -40,7 +40,7 @@ export default {
   },
   mounted () {
     //  this.$refs.wrapper 获取dom
-    this.scroll = new BScroll(this.$refs.wrapper)
+    this.scroll = new BScroll(this.$refs.wrapper, {click: true})
   },
   watch: {
     letter () {
