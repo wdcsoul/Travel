@@ -57,7 +57,7 @@ export default {
     this.getHomeInfo()
   },
   activated () {
-    /* 当页面重新被显示的时候，activted会重新被执行 这里实现的效果是城市如果和上次选择的城市不一样，就重新发送ajax请求新的数据*/
+    /* 当页面重新被显示的时候，activted会重新被执行 这里实现的效果是城市如果和上次选择的城市不一样，就重新发送ajax请求新的数据 */
     if (this.lastCity !== this.city) {
       this.lastCity = this.city
       this.getHomeInfo()
