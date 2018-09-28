@@ -27,7 +27,7 @@ export default {
     window.addEventListener('scroll', this.handleScroll)
   },
   deactivated () {
-    window.removeEventListener('scroll',this.handleScroll)
+    window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
     handleScroll () {
@@ -73,7 +73,7 @@ export default {
     top:0
     right 0
     left 0
-    z-index 999
+    z-index 2
     .header-fixed-back
       width .64rem
       text-align center
